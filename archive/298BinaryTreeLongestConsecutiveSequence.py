@@ -1,10 +1,9 @@
 # coding=utf-8
 '''
-Created on 2017å¹?6æœ?16æ—?
+Created on 2017ï¿½?6ï¿½?16ï¿½?
 
 @author: Administrator
 '''
-from test.test_iterlen import NoneLengthHint
 from data_structure.Tree import list_to_tree
 
 
