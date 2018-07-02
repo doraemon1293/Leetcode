@@ -1,6 +1,6 @@
 # coding=utf-8
 '''
-Created on 2016å¹?10æœ?26æ—?
+Created on 2016ï¿½?10ï¿½?26ï¿½?
 
 @author: Administrator
 '''
@@ -22,4 +22,4 @@ class Solution(object):
                 return [i, d[target - nums[i]]]
 
 
-print Solution().twoSum([2, 7, 11, 15], 9)
+print (Solution().twoSum([2, 7, 11, 15], 9))
