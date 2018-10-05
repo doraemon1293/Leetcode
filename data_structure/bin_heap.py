@@ -1,5 +1,5 @@
 # coding=utf-8
-class BinHeap:  # �?小堆
+class BinHeap:  # �?小堆
 
     def __init__(self):
         self.heapList = [0]
@@ -16,7 +16,7 @@ class BinHeap:  # �?小堆
         self.currentSize = self.currentSize + 1
         self.percUp(self.currentSize)
 
-    def percDown(self, i):  # 向下 与较小的子节点交�?
+    def percDown(self, i):  # 向下 与较小的子节点交�?
         while (i * 2) <= self.currentSize:
             mc = self.minChild(i)
             if self.heapList[i] > self.heapList[mc]:
@@ -51,8 +51,8 @@ class BinHeap:  # �?小堆
 
 bh = BinHeap()
 bh.buildHeap([9, 5, 6, 2, 3])
-print bh.heapList
+print (bh.heapList)
 print(bh.delMin())
 print(bh.delMin())
 print(bh.delMin())
-print bh.heapList
+print (bh.heapList)
