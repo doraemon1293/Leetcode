@@ -1,3 +1,14 @@
 没看懂 798
 
 区间删除 759
+1026 top->bottom recursion
+1044 review KMP
+1066 heap+BFS+prune
+1063 Monotone Stack
+Range minimum query
+
+1074 sum of sub-matrix
+
+1124 单调栈 https://leetcode.com/problems/longest-well-performing-interval/discuss/335163/O(N)-Without-Hashmap.-Generalized-ProblemandSolution%3A-Find-Longest-Subarray-With-Sum-greater-K.
+
+1199 huffman code
