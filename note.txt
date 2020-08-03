@@ -12,3 +12,11 @@ Range minimum query
 1124 单调栈 https://leetcode.com/problems/longest-well-performing-interval/discuss/335163/O(N)-Without-Hashmap.-Generalized-ProblemandSolution%3A-Find-Longest-Subarray-With-Sum-greater-K.
 
 1199 huffman code
+
+1425 单调队列
+
+1438 单调队列
+
+1487 不一个一个挨个记录node的祖先 而是记录node的上1层 上2 4 8 16...的祖先
+
+1526 范围最值查询

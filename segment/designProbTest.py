@@ -1,15 +1,15 @@
 # coding=utf-8
 '''
-Created on 2017å¹?8æœ?10æ—?
+Created on 2017ï¿½?8ï¿½?10ï¿½?
 
 @author: Administrator
 '''
 
 
 def designProbTest(functions, parameters):
-    for i in xrange(len(functions)):
+    for i in range(len(functions)):
         f, para = functions[i], parameters[i]
-        if f[0].isupper():
+        if f[i].isupper():
             cls = eval(f + "(*para)")
         else:
-            print eval("cls." + f + "(*para)")
+            print(eval("cls." + f + "(*para)"))
