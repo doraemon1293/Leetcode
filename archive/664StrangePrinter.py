@@ -1,6 +1,6 @@
 # coding=utf-8
 '''
-Created on 2017å¹?10æœ?10æ—?
+Created on 2017ï¿½?10ï¿½?10ï¿½?
 
 @author: Administrator
 '''
@@ -21,6 +21,7 @@ class Solution(object):
                 temp.append(last_ch)
                 last_ch = cur_ch
         s = temp
+        print(s)
         memo = {}
 
         def dp(i, j):
@@ -38,5 +39,5 @@ class Solution(object):
 
 
 s = "aaabb"
-print Solution().strangePrinter(s)
+print(Solution().strangePrinter(s))
 
