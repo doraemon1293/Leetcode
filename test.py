@@ -1,3 +1,6 @@
-import bisect
-arr=[(1,2,3),(3,4,5)]
-print(bisect.bisect_right(arr,2))
+import collections
+arr=[1,2,3,4]
+arr1=collections.deque(arr)
+arr1.append(0)
+print(arr1,arr)
+

@@ -1,4 +1,4 @@
-from typing import Listx
+from typing import List
 import collections
 
 
@@ -19,6 +19,3 @@ class Solution:
                         q_dict[x0, y0] += int(q / (1 + d ** 0.5))
         max_v = max(q_dict.values())
         return sorted([k for k, v in q_dict.items() if v == max_v])[0]
-towers=[[0, 1, 2], [2, 1, 2], [1, 0, 2], [1, 2, 2]]
-radius=1
-print(Solution().bestCoordinate(towers,radius))

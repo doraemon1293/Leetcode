@@ -1,6 +1,7 @@
 from functools import lru_cache
 import sys
 sys.setrecursionlimit(10**6)
+
 class Solution:
     def numberOfSets(self, n: int, k: int) -> int:
         MOD = 10 ** 9 + 7
