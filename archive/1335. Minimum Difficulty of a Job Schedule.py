@@ -1,26 +1,24 @@
-import collections
-
+from typing import List
+import functools
 
 class Solution:
     def minDifficulty(self, jobDifficulty: List[int], d: int) -> int:
-        dp = collections.defaultdict(lambda: float("inf"))
-        n=len(jobDifficulty)
-        def foo(i, d):
-            if (i, d) in dp:
-                return dp[i, d]
-            if d == 1:
-                dp[i, d] = max(jobDifficulty[i:])
-                return dp[i, d]
-            max_d = -1
-            res = float("inf")
-            for j in range(i, n - d + 1):
-                max_d = max(jobDifficulty[j], max_d)
-                res = min(res, max_d + foo(j + 1, d - 1))
-            dp[i,d]=res
-            return res
+        N = len(jobDifficulty)
+        D = d
+        dp = [[0] * N for _ in range(D)]  # list dp(d,job) job schedule d-th day finish job-th job N*d
 
-        ans=foo(0,d)
-        if ans==float("inf"):
-            return -1
-        else:
-            return ans
+        @functools.lru_cache(None)
+        def get_max(i,j):
+            return max(jobDifficulty[i:j+1])
+
+        for d in range(D):
+            for job in range(N):
+                if d == 0:
+                    dp[d][job] = get_max(0,job)
+                else:
+                    mini = float("inf")
+                    for i in range(d - 1, job):
+                        mini = min(dp[d - 1][i] + get_max(i+1,job), mini)
+                    dp[d][job]=mini
+
+        return dp[D-1][N-1]
