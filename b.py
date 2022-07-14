@@ -1,2 +1,3 @@
-arr=[2,3,4]
-print(list(enumerate(arr,10)))
+import bisect
+arr=[(1,1)]
+print(bisect.bisect_left(arr,(1,0)))

@@ -1,23 +1,12 @@
 import collections
-from typing import List
 class Solution:
     def maxOperations(self, nums: List[int], k: int) -> int:
-        d=collections.defaultdict(int)
+        c=collections.Counter(nums)
         ans=0
-        for num in nums:
-            d[num]+=1
-            if num*2==k:
-                if d[k-num]>=2:
-                    d[k-num]-=2
-                    ans+=1
+        for i in range(1,k//2+1):
+            j=k-i
+            if i!=j:
+                ans+=min(c.get(i,0),c.get(j,0))
             else:
-                if d[k-num]:
-                    d[num]-=1
-                    d[k-num]-=1
-                    ans+=1
+                ans+=c.get(i,0)//2
         return ans
-
-nums=[1,2,3,4]
-k=5
-
-print(Solution().maxOperations(nums,k))

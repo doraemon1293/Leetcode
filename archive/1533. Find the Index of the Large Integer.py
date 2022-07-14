@@ -16,8 +16,23 @@
 
 class Solution:
     def getIndex(self, reader: 'ArrayReader') -> int:
-        N=reader.length()
-        lo,hi=0,N-1
-        while:
-            if (hi-lo+1)%2==0:
-                l,r,x,y=
+        left, right = 0, reader.length() - 1
+        while left < right:
+            length = right - left + 1
+            print(left, right, length)
+            if length % 2 == 0:
+                res = reader.compareSub(left, left + length // 2 - 1, right - length // 2 + 1, right)
+                if res > 0:
+                    left, right = left, left + length // 2 - 1
+                else:
+                    left, right = right - length // 2 + 1, right
+            else:
+                res = reader.compareSub(left, left + length // 2 - 1, right - length // 2 + 1, right)
+                if res > 0:
+                    left, right = left, left + length // 2 - 1
+                elif res < 0:
+                    left, right = right - length // 2 + 1, right
+                else:
+                    return left + length//2
+        return left
+

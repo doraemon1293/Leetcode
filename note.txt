@@ -20,3 +20,5 @@ Range minimum query
 1487 不一个一个挨个记录node的祖先 而是记录node的上1层 上2 4 8 16...的祖先
 
 1526 范围最值查询
+
+2132 review
