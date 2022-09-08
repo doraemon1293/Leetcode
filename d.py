@@ -1,32 +1,24 @@
+import heapq
 from typing import List
 
 
 class Solution:
-    def hasValidPath(self, grid: List[List[str]]) -> bool:
+    def kSum(self, nums: List[int], k: int) -> int:
+        max_sum = sum([num for num in nums if num>=0])
+        abs_nums=sorted(abs(num) for num in nums)[:k]
+        max_heap = [max_sum]
+        for num in abs_nums:
+            for pre_sum in heap[:]:
+                new_sum = pre_sum - num
+                heapq.heappush(heap, new_sum)
+                while len(heap) > k:
+                    x = heapq.heappop(heap)
+                    # print("x=", x)
 
-        M = len(grid)
-        N = len(grid[0])
+        # print(len(heap))
+        return heap[0]
 
-        def legit(dp, i, j):
-            if dp == set():
-                return set()
-            if grid[i][j] == "(":
-                return set([x + 1 for x in dp])
-            else:
-                return set([x - 1 for x in dp if x != 0])
+nums=[-347135403,-741775723,349271195,967839234,822470265,-545249891,293401682,908306445,296832265,9392523,-84929173,-784997375,699878100,291656873,-910458294,547370160,584504507,977373244,-963031162,819184328]
+k=473
+print((Solution().kSum(nums,k)))
 
-        for i in range(M):
-            dp = [0] * N
-            for j in range(N):
-                if i == 0:
-                    if j == 0:
-                        dp[j] = legit([0], i, j)
-                    else:
-                        dp[j] = legit(dp[j - 1], i, j)
-                else:
-                    if j == 0:
-                        dp[j] = legit(last_dp[j], i, j)
-                    else:
-                        dp[j] = legit(last_dp[j] | dp[j - 1], i, j)
-            last_dp = dp
-        return 0 in dp[N - 1]

@@ -23,5 +23,3 @@ class Solution:
             if '0' in num:
                 ans='0'
         return ans
-
-print(Solution().largestPalindromic(num='0000'))
